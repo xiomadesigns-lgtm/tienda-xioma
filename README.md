@@ -1,2 +1,2 @@
-# tienda-xiomadesigns
-xioma designs
+# tienda-xioma
+tienda xioma
