@@ -1,0 +1,451 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta charset="utf-8">
+<title>Xioma Designs</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Mulish:wght@400;600;700&display=swap">
+<style>
+/* Concepto: tienda luminosa en blanco rosado, titulares serif en morado, foto de taller a la izquierda y tarjeta de marca a la derecha.
+   Proporción de color: 50% blanco rosado/rosa suave, 25% morado, 15% fucsia/frambuesa, 10% turquesa. */
+:root{
+  --bg:#FFF9FC;--surface:#FFFFFF;--soft:#FADAF0;--ink:#2B1635;--mut:#6B5578;--line:#F1D9EA;
+  --morado:#873DAD;--btn:#873DAD;--btn-ink:#FFFFFF;--fucsia:#D93988;--framb:#B14E84;--turq:#7FC7D1;
+  --shadow:rgba(135,61,173,.14);--overlay:rgba(43,22,53,.55);
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:Mulish,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1B1022;--surface:#26172F;--soft:#3A2347;--ink:#F7E9F3;--mut:#C3AACF;--line:#3F2A4C;
+  --morado:#D3A0EE;--btn:#9A48C0;--fucsia:#F06FAB;--framb:#E394BE;--turq:#7FC7D1;
+  --shadow:rgba(0,0,0,.35);--overlay:rgba(10,4,14,.7);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1B1022;--surface:#26172F;--soft:#3A2347;--ink:#F7E9F3;--mut:#C3AACF;--line:#3F2A4C;
+  --morado:#D3A0EE;--btn:#9A48C0;--fucsia:#F06FAB;--framb:#E394BE;--turq:#7FC7D1;
+  --shadow:rgba(0,0,0,.35);--overlay:rgba(10,4,14,.7);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--fucsia);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance;line-height:1.1;color:var(--morado)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{scroll-margin-top:84px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--framb);margin:0 0 10px}
+.sec{padding-block:72px}
+.sec h2{font-size:clamp(32px,4.4vw,48px);margin-bottom:12px}
+.lead{color:var(--mut);max-width:60ch;margin:0 0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--btn);color:var(--btn-ink);padding:13px 26px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px var(--shadow)}
+.btn.ghost{background:transparent;color:var(--morado);border:1.5px solid var(--morado)}
+.btn[disabled]{opacity:.5;cursor:default;transform:none;box-shadow:none}
+
+/* Cabecera */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;min-height:72px}
+.logo{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--soft);text-decoration:none;text-align:center;line-height:1;flex:none}
+.logo b{font:600 17px/1 var(--serif);color:var(--morado);display:block}
+.logo i{font:700 6px/1 var(--sans);letter-spacing:.22em;color:var(--fucsia);font-style:normal;display:block;margin-top:3px}
+nav{display:flex;gap:26px;margin-left:auto}
+nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;text-decoration:none;color:var(--morado);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--fucsia)}
+.iconbtn{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--morado);flex:none}
+.iconbtn svg{width:22px;height:22px}
+.badge{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:10px;background:var(--fucsia);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;padding:0 5px}
+.badge[hidden]{display:none}
+.menubtn{display:none}
+@media (max-width:980px){
+  nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-left,0px)) 14px}
+  nav.open{display:flex}
+  nav a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menubtn{display:grid;margin-left:auto}
+  .bar{gap:12px}
+}
+
+/* Portada */
+.hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);min-height:min(76vh,640px);background:linear-gradient(90deg,var(--bg),var(--soft))}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:35% 0%;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+.hero-card{align-self:center;margin:32px max(16px,env(safe-area-inset-right,0px)) 32px -64px;position:relative;background:var(--surface);border-radius:28px;padding:44px 40px 32px;box-shadow:0 24px 60px var(--shadow)}
+.hero-card h1{font-size:clamp(40px,4.6vw,62px);margin-bottom:16px}
+.hero-card h1 em{color:var(--fucsia);font-style:italic}
+.hero-card p.sub{color:var(--mut);margin:0 0 26px;max-width:36ch}
+.perks{display:flex;flex-wrap:wrap;gap:8px 22px;margin:28px 0 0;padding:0;list-style:none;font-size:14px;color:var(--morado)}
+.perks li{display:flex;align-items:center;gap:8px}
+.perks svg{width:20px;height:20px;color:var(--turq);flex:none}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-img{aspect-ratio:4/3}
+  .hero-img img{-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent);mask-image:linear-gradient(180deg,#000 80%,transparent)}
+  .hero-card{margin:-40px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px));padding:30px 24px 24px}
+}
+
+/* Catálogo */
+.tools{display:grid;grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
+@media (max-width:700px){.tools{grid-template-columns:1fr 1fr}.tools .search{grid-column:1/-1}}
+.tools input,.tools select{width:100%;height:46px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:0 14px;font:inherit}
+.count{color:var(--mut);font-size:14px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(224px,1fr));gap:20px}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0}
+.card-img{display:block;border:0;padding:0;background:var(--soft);aspect-ratio:1;width:100%}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.card:hover .card-img img{transform:scale(1.03)}
+.card-b{display:flex;flex-direction:column;gap:4px;padding:14px 14px 16px;flex:1}
+.coll{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--framb);font-weight:700;margin:0}
+.card h3{font-size:22px;line-height:1.15;color:var(--ink);font-weight:600}
+.card-f{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px}
+.price{font:600 22px/1 var(--serif);color:var(--morado);font-variant-numeric:tabular-nums}
+.add{border:1.5px solid var(--morado);background:transparent;color:var(--morado);border-radius:999px;padding:7px 14px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.add:hover{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.last{font-size:11px;color:var(--mut);display:flex;align-items:center;gap:6px}
+.last::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--turq)}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:48px 0}
+
+/* Colecciones */
+.colls{background:var(--soft)}
+.collgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+@media (max-width:520px){.collgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.coll-card{position:relative;border:0;padding:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;text-align:left;background:var(--surface)}
+.coll-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.coll-card span{position:absolute;left:0;right:0;bottom:0;padding:44px 14px 14px;background:linear-gradient(180deg,transparent,rgba(43,22,53,.82));color:#fff}
+.coll-card b{display:block;font:600 22px/1.1 var(--serif)}
+.coll-card small{font-size:12px;opacity:.9}
+
+/* Proceso, nosotros, cómo comprar */
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.step svg{width:30px;height:30px;color:var(--turq);margin-bottom:14px}
+.step h3{font-size:26px;margin-bottom:8px}
+.step p{margin:0;color:var(--mut)}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}}
+.about p{color:var(--mut);margin:0 0 14px;max-width:62ch}
+blockquote{margin:0 0 24px;font:italic 500 clamp(28px,3.4vw,40px)/1.2 var(--serif);color:var(--fucsia)}
+.vals{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.vals li{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.vals b{color:var(--morado)}
+@media (max-width:520px){.vals li{grid-template-columns:1fr;gap:2px}}
+.rail{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x proximity}
+.rail .card{flex:0 0 clamp(200px,24vw,250px);scroll-snap-align:start}
+.how{counter-reset:s}
+.how .step{counter-increment:s}
+.how .step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--morado);font-weight:700;margin-bottom:12px}
+footer{background:var(--soft);padding-block:40px;text-align:center}
+footer .tag{font:italic 500 28px/1.2 var(--serif);color:var(--morado);margin:0 0 8px}
+footer p{margin:0;color:var(--mut);font-size:14px}
+
+/* Modal y carrito */
+.veil{position:fixed;inset:0;background:var(--overlay);z-index:80;display:flex;justify-content:center;align-items:flex-start;overflow:auto;padding:max(20px,env(safe-area-inset-top,0px)) 14px 20px}
+.veil[hidden]{display:none}
+.modal{background:var(--bg);border-radius:22px;max-width:940px;width:100%;padding:20px;position:relative;border:1px solid var(--line)}
+.x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:22px;line-height:1;color:var(--morado);z-index:2}
+.pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+@media (max-width:760px){.pd{grid-template-columns:1fr}}
+.pd img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;background:var(--soft)}
+.pd h2{font-size:clamp(30px,4vw,42px);margin:6px 48px 6px 0}
+.pd .price{font-size:30px}
+.pd dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:18px 0;font-size:14px}
+.pd dt{color:var(--mut)}.pd dd{margin:0}
+.pd h4{font:600 12px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--framb);margin:18px 0 6px}
+.pd p{margin:0;color:var(--ink)}
+.buy{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.qty button{width:38px;height:38px;border:0;background:none;font-size:20px;color:var(--morado);border-radius:50%}
+.qty button:disabled{opacity:.35}
+.qty span{min-width:28px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.drawer-veil{justify-content:flex-end;padding:0}
+.drawer{background:var(--bg);width:min(440px,100%);min-height:100%;padding:max(20px,env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) 18px;display:flex;flex-direction:column;gap:14px;border-left:1px solid var(--line)}
+.drawer h2{font-size:34px;padding-right:48px}
+.items{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center}
+.item img{width:64px;height:64px;object-fit:cover;border-radius:10px}
+.item b{display:block;font:600 18px/1.15 var(--serif);color:var(--ink)}
+.item small{color:var(--mut)}
+.rm{border:0;background:none;color:var(--mut);font-size:12px;text-decoration:underline;padding:0}
+.tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:12px;font-weight:700}
+.tot .price{font-size:28px}
+.drawer label{display:block;font-size:12px;color:var(--mut);margin-bottom:3px}
+.drawer input,.drawer textarea{width:100%;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);padding:10px 12px;font:inherit}
+.drawer textarea{min-height:64px;resize:vertical}
+.fld{display:grid;gap:10px}
+.note{font-size:13px;color:var(--mut);margin:0}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--btn);color:var(--btn-ink);padding:11px 20px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:90}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#inicio" aria-label="Xioma Designs, inicio"><span><b>Xioma</b><i>DESIGNS</i></span></a>
+    <nav id="nav" aria-label="Secciones">
+      <a href="#catalogo">Catálogo</a><a href="#colecciones">Colecciones</a><a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a><a href="#novedades">Novedades</a><a href="#como-comprar">Cómo comprar</a>
+    </nav>
+    <button class="iconbtn menubtn" id="menubtn" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <button class="iconbtn" id="cartbtn" aria-label="Ver carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" id="badge" hidden>0</span></button>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-label="Portada">
+    <div class="hero-img"><img src="hero.jpg" alt="Xioma trabajando en su taller de joyería, rodeada de pinzas y alambre"></div>
+    <div class="hero-card">
+      <p class="eyebrow">Joyas hechas a mano con el alma</p>
+      <h1>Una joya también puede hablar de <em>ti</em></h1>
+      <p class="sub">Joyas artesanales creadas a mano para mujeres que expresan su esencia y estilo.</p>
+      <a class="btn" href="#catalogo">Descubrir colección</a>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 4h12l3 5-9 11L3 9l3-5Z"/><path d="M3 9h18M9 4l3 5 3-5M12 9v11"/></svg>Diseños únicos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10Z"/></svg>Hechos a mano</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="m12 3 2.2 5.3L20 9l-4.3 3.9L17 19l-5-3-5 3 1.3-6.1L4 9l5.8-.7L12 3Z"/></svg>Calidad artesanal</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="catalogo" class="sec wrap">
+    <p class="eyebrow">Catálogo</p>
+    <h2>Todas las piezas</h2>
+    <p class="lead">Cada joya se crea a mano, una por una. Elegí la tuya y agregala al carrito.</p>
+    <div class="tools">
+      <input class="search" id="q" type="search" placeholder="Buscar por nombre, color o material" aria-label="Buscar joyas">
+      <select id="fc" aria-label="Filtrar por colección"></select>
+      <select id="fs" aria-label="Ordenar">
+        <option value="orden">Orden de la tienda</option><option value="nuevas">Más nuevas</option>
+        <option value="menor">Precio: menor a mayor</option><option value="mayor">Precio: mayor a menor</option>
+      </select>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="colecciones" class="colls"><div class="sec wrap">
+    <p class="eyebrow">Colecciones</p>
+    <h2>Nuestras colecciones</h2>
+    <p class="lead">Elegí por tipo de joya o por la historia que querés llevar.</p>
+    <div class="collgrid" id="collgrid"></div>
+  </div></section>
+
+  <section id="proceso" class="sec wrap">
+    <p class="eyebrow">Proceso</p>
+    <h2>Así nace una pieza</h2>
+    <p class="lead">Un camino de creatividad, paciencia y detalle, donde las manos transmiten emociones.</p>
+    <div class="three">
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></svg><h3>La idea</h3><p>Colores, materiales y emociones se transforman en un diseño con identidad propia.</p></div>
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c4-8 6 6 10-2s4-6 6-4M4 20c5-2 8-2 16-6"/></svg><h3>El alambrismo</h3><p>Trabajamos el alambre con las manos, pieza por pieza, con materiales nobles y de alta calidad.</p></div>
+      <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.4-7 10-7 10Z"/></svg><h3>Tu joya</h3><p>Cada creación es única y lleva detalles hechos a mano, para que sientas que va con vos.</p></div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="colls"><div class="sec wrap">
+    <p class="eyebrow">Nosotros</p>
+    <div class="about">
+      <div>
+        <h2>Quién soy</h2>
+        <blockquote>“Tu esencia merece brillar.”</blockquote>
+        <p>Xioma Designs es un proyecto de joyería artesanal nacido de la pasión por crear, la creatividad y el amor por los detalles. A través de cada pieza, comparto una forma de expresar personalidad, autenticidad y estilo.</p>
+        <p>Creo que una joya puede ser mucho más que un accesorio: puede acompañar momentos, transmitir emociones y reflejar algo de quiénes somos. Por eso, mi intención es crear piezas que realcen la belleza y la autenticidad de cada mujer.</p>
+        <p>Nuestro propósito es crear joyas únicas en alambrismo que celebren la fuerza, la valentía y el amor propio de cada mujer.</p>
+      </div>
+      <div>
+        <h2>Lo que nos guía</h2>
+        <ul class="vals">
+          <li><b>Autenticidad</b><span>Cada joya refleja la esencia única de quien la lleva.</span></li>
+          <li><b>Fuerza y valentía</b><span>Celebramos el coraje de ser auténticas.</span></li>
+          <li><b>Pasión artesanal</b><span>Cada pieza es creada con dedicación, detalle y alma.</span></li>
+          <li><b>Calidad</b><span>Materiales nobles que buscan ofrecer belleza y durabilidad.</span></li>
+          <li><b>Estilo propio</b><span>Fomentamos el valor de la identidad y la expresión personal.</span></li>
+          <li><b>Conexión natural</b><span>Nos inspira la belleza simple y poderosa de la naturaleza.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section id="novedades" class="sec wrap">
+    <p class="eyebrow">Novedades</p>
+    <h2>Recién creadas</h2>
+    <p class="lead">Las últimas piezas que salieron del taller.</p>
+    <div class="rail" id="rail"></div>
+  </section>
+
+  <section id="como-comprar" class="colls"><div class="sec wrap">
+    <p class="eyebrow">Cómo comprar</p>
+    <h2>Comprar es simple</h2>
+    <p class="lead">Todos los precios están en pesos argentinos (ARS).</p>
+    <div class="three how">
+      <div class="step"><h3>Elegí tus piezas</h3><p>Recorré el catálogo y agregá al carrito las joyas que te representan.</p></div>
+      <div class="step"><h3>Enviá tu pedido</h3><p>Desde el carrito, tu pedido se arma en un mensaje de WhatsApp con el detalle y el total.</p></div>
+      <div class="step"><h3>Confirmamos juntas</h3><p>Te respondemos para confirmar disponibilidad, medio de pago y envío.</p></div>
+    </div>
+  </div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="tag">Joyas únicas que celebran tu fuerza y estilo.</p>
+    <p>Xioma Designs · Joyas hechas a mano con el alma</p>
+  </div>
+</footer>
+
+<div class="veil" id="pv" hidden role="dialog" aria-modal="true" aria-label="Detalle de la pieza"><div class="modal" id="pm"></div></div>
+<div class="veil drawer-veil" id="cv" hidden role="dialog" aria-modal="true" aria-label="Carrito"><aside class="drawer" id="cd"></aside></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* Número de WhatsApp de Xioma Designs, con código de país y sin símbolos. Ejemplo: 5491122334455 */
+const WHATSAPP = "5491164179922";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money = n => "$" + (+n || 0).toLocaleString("es-AR");
+const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const nice = s => { s = String(s || "").trim(); return s && s === s.toUpperCase() ? s.charAt(0) + s.slice(1).toLowerCase() : s; };
+
+let P = [], byId = {}, cart = {}, view = [];
+
+/* Carrito guardado en el navegador (solo comodidad de quien compra) */
+function saveCart(){ try { localStorage.setItem("xioma-carrito", JSON.stringify(cart)); } catch (e) {} }
+function loadCart(){
+  try {
+    const c = JSON.parse(localStorage.getItem("xioma-carrito") || "{}");
+    Object.keys(c).forEach(id => { if (byId[id]) cart[id] = Math.max(1, Math.min(+c[id] || 1, byId[id].stock)); });
+  } catch (e) {}
+}
+const cartCount = () => Object.values(cart).reduce((a, b) => a + b, 0);
+const cartTotal = () => Object.entries(cart).reduce((a, [id, q]) => a + byId[id].precio * q, 0);
+
+function toast(t){ const e = $("#toast"); e.textContent = t; e.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => e.classList.remove("on"), 1800); }
+function refreshBadge(){ const n = cartCount(), b = $("#badge"); b.hidden = !n; b.textContent = n; }
+function add(id, q = 1){
+  const p = byId[id]; if (!p) return;
+  const cur = cart[id] || 0;
+  if (cur >= p.stock) { toast(p.stock === 1 ? "Es una pieza única y ya está en tu carrito" : "Ya agregaste todas las unidades disponibles"); return; }
+  cart[id] = Math.min(p.stock, cur + q); saveCart(); refreshBadge(); toast("Agregado al carrito");
+  if (!$("#cv").hidden) drawCart();
+}
+
+/* Tarjetas */
+function cardHTML(p){
+  return `<article class="card"><button class="card-img" data-open="${esc(p.id)}" aria-label="Ver ${esc(nice(p.nombre))}"><img loading="lazy" src="${esc(p.foto)}" alt="${esc(nice(p.nombre))}"></button>
+  <div class="card-b"><p class="coll">${esc(p.coleccion)}</p><h3>${esc(nice(p.nombre))}</h3>${p.stock === 1 ? '<span class="last">Última pieza</span>' : ""}
+  <div class="card-f"><span class="price">${money(p.precio)}</span><button class="add" data-add="${esc(p.id)}">Agregar</button></div></div></article>`;
+}
+function renderGrid(){
+  const q = norm($("#q").value), c = $("#fc").value, s = $("#fs").value;
+  view = P.filter(p => (!c || p.coleccion === c) && (!q || norm([p.nombre, p.codigo, p.coleccion, p.colores, p.materiales, p.tecnica, p.descripcion].join(" ")).includes(q)));
+  if (s === "menor") view.sort((a, b) => a.precio - b.precio);
+  else if (s === "mayor") view.sort((a, b) => b.precio - a.precio);
+  else if (s === "nuevas") view.sort((a, b) => (b.fecha || "").localeCompare(a.fecha || "") || b.n - a.n);
+  $("#grid").innerHTML = view.length ? view.map(cardHTML).join("") : '<p class="empty">No encontramos piezas con esa búsqueda. Probá con otra palabra o elegí otra colección.</p>';
+  $("#count").textContent = view.length === P.length ? `${P.length} piezas` : `${view.length} de ${P.length} piezas`;
+}
+function renderCollections(){
+  const names = [...new Set(P.map(p => p.coleccion))].filter(Boolean).sort((a, b) => a.localeCompare(b, "es"));
+  $("#fc").innerHTML = '<option value="">Todas las colecciones</option>' + names.map(n => `<option>${esc(n)}</option>`).join("");
+  $("#collgrid").innerHTML = names.map(n => {
+    const items = P.filter(p => p.coleccion === n);
+    return `<button class="coll-card" data-coll="${esc(n)}"><img loading="lazy" src="${esc(items[0].foto)}" alt=""><span><b>${esc(n)}</b><small>${items.length} ${items.length === 1 ? "pieza" : "piezas"}</small></span></button>`;
+  }).join("");
+}
+function renderRail(){
+  const nw = P.slice().sort((a, b) => (b.fecha || "").localeCompare(a.fecha || "") || b.n - a.n).slice(0, 8);
+  $("#rail").innerHTML = nw.map(cardHTML).join("");
+}
+
+/* Ficha de pieza */
+function openPiece(id){
+  const p = byId[id]; if (!p) return;
+  const rows = [["Materiales", p.materiales], ["Técnica", p.tecnica], ["Colores", p.colores], ["Largo", p.largo ? p.largo + " cm" : ""]].filter(r => r[1]);
+  let q = 1; const max = Math.max(1, p.stock - (cart[id] || 0));
+  $("#pm").innerHTML = `<button class="x" data-close aria-label="Cerrar">×</button><div class="pd"><img src="${esc(p.foto)}" alt="${esc(nice(p.nombre))}"><div>
+    <p class="coll">${esc(p.coleccion)}</p><h2>${esc(nice(p.nombre))}</h2><span class="price">${money(p.precio)}</span>
+    ${p.stock === 1 ? '<p class="last" style="margin-top:6px">Última pieza disponible</p>' : ""}
+    ${p.descripcion ? `<h4>Descripción</h4><p>${esc(p.descripcion)}</p>` : ""}
+    ${rows.length ? `<dl>${rows.map(r => `<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join("")}</dl>` : ""}
+    ${p.historia ? `<h4>La historia de esta pieza</h4><p>${esc(p.historia)}</p>` : ""}
+    ${p.set ? `<h4>Combina con</h4><p>${esc(p.set)}</p>` : ""}
+    <div class="buy">${max > 1 ? `<div class="qty"><button data-q="-1" aria-label="Menos">−</button><span id="qv">1</span><button data-q="1" aria-label="Más">+</button></div>` : ""}
+    <button class="btn" id="addpiece">${(cart[id] || 0) >= p.stock ? "Ya está en tu carrito" : "Agregar al carrito"}</button></div>
+    <p class="note" style="margin-top:10px">Código ${esc(p.codigo)}</p></div></div>`;
+  $("#pv").hidden = false; document.body.style.overflow = "hidden";
+  const ab = $("#addpiece"); if ((cart[id] || 0) >= p.stock) ab.disabled = true;
+  $("#pm").onclick = e => {
+    const b = e.target.closest("[data-q]");
+    if (b) { q = Math.max(1, Math.min(max, q + +b.dataset.q)); $("#qv").textContent = q; return; }
+    if (e.target.closest("#addpiece")) { add(id, q); closePiece(); }
+    if (e.target.closest("[data-close]")) closePiece();
+  };
+}
+function closePiece(){ $("#pv").hidden = true; document.body.style.overflow = ""; }
+
+/* Carrito */
+function orderText(){
+  const f = id => $(id) ? $(id).value.trim() : "";
+  const lines = Object.entries(cart).map(([id, q]) => `• ${q} × ${nice(byId[id].nombre)} (${byId[id].codigo}) — ${money(byId[id].precio * q)}`);
+  let t = "Hola Xioma Designs, quiero hacer este pedido:\n\n" + lines.join("\n") + `\n\nTotal: ${money(cartTotal())} (ARS)`;
+  if (f("#cn")) t += "\n\nNombre: " + f("#cn");
+  if (f("#cl")) t += "\nLocalidad: " + f("#cl");
+  if (f("#cx")) t += "\nNotas: " + f("#cx");
+  return t;
+}
+function drawCart(){
+  const ids = Object.keys(cart), d = $("#cd");
+  const keep = ["#cn", "#cl", "#cx"].map(s => $(s) ? $(s).value : "");
+  if (!ids.length) {
+    d.innerHTML = `<button class="x" data-close aria-label="Cerrar">×</button><h2>Tu carrito</h2><p class="note">Todavía no agregaste joyas. Cuando elijas alguna, aparece acá.</p><button class="btn ghost" data-close>Seguir mirando</button>`;
+    return;
+  }
+  d.innerHTML = `<button class="x" data-close aria-label="Cerrar">×</button><h2>Tu carrito</h2>
+  <ul class="items">${ids.map(id => { const p = byId[id], q = cart[id]; return `<li class="item"><img src="${esc(p.foto)}" alt=""><div><b>${esc(nice(p.nombre))}</b><small>${money(p.precio)} c/u</small><br><button class="rm" data-rm="${esc(id)}">Quitar</button></div>
+    <div class="qty"><button data-dec="${esc(id)}" aria-label="Menos">−</button><span>${q}</span><button data-inc="${esc(id)}" aria-label="Más" ${q >= p.stock ? "disabled" : ""}>+</button></div></li>`; }).join("")}</ul>
+  <div class="tot"><span>Total</span><span class="price">${money(cartTotal())}</span></div>
+  <div class="fld"><div><label for="cn">Tu nombre</label><input id="cn" autocomplete="name"></div><div><label for="cl">Localidad</label><input id="cl" autocomplete="address-level2"></div><div><label for="cx">Notas (opcional)</label><textarea id="cx"></textarea></div></div>
+  ${WHATSAPP ? `<a class="btn" id="send" target="_blank" rel="noopener" href="#">Enviar pedido por WhatsApp</a>` : `<button class="btn" id="copy">Copiar mi pedido</button>`}
+  <button class="btn ghost" id="copy2" ${WHATSAPP ? "" : "hidden"}>Copiar mi pedido</button>
+  <p class="note" id="hint">${WHATSAPP ? "Se abre WhatsApp con tu pedido listo. Enviá el mensaje para que lo recibamos." : "Copiá el pedido y envialo en un mensaje a Xioma Designs."} Precios en pesos argentinos.</p>`;
+  ["#cn", "#cl", "#cx"].forEach((s, i) => { if ($(s)) $(s).value = keep[i]; });
+  const upd = () => { const a = $("#send"); if (a) a.href = `https://wa.me/${WHATSAPP.replace(/\D/g, "")}?text=${encodeURIComponent(orderText())}`; };
+  upd(); ["#cn", "#cl", "#cx"].forEach(s => $(s).addEventListener("input", upd));
+  const cp = async () => {
+    const t = orderText();
+    try { await navigator.clipboard.writeText(t); toast("Pedido copiado"); }
+    catch (e) { const ta = document.createElement("textarea"); ta.value = t; ta.style.cssText = "width:100%;min-height:150px;margin-top:8px"; $("#hint").after(ta); ta.select(); toast("Seleccioná y copiá el texto"); }
+  };
+  ["#copy", "#copy2"].forEach(s => { if ($(s)) $(s).onclick = cp; });
+}
+function openCart(){ drawCart(); $("#cv").hidden = false; document.body.style.overflow = "hidden"; }
+function closeCart(){ $("#cv").hidden = true; document.body.style.overflow = ""; }
+$("#cd").onclick = e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.hasAttribute("data-close")) return closeCart();
+  const id = t.dataset.inc || t.dataset.dec || t.dataset.rm; if (!id) return;
+  if (t.dataset.inc) cart[id] = Math.min(byId[id].stock, cart[id] + 1);
+  else if (t.dataset.dec) { cart[id]--; if (cart[id] < 1) delete cart[id]; }
+  else delete cart[id];
+  saveCart(); refreshBadge(); drawCart();
+};
+
+/* Eventos generales */
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-add]"); if (a) return add(a.dataset.add);
+  const o = e.target.closest("[data-open]"); if (o) return openPiece(o.dataset.open);
+  const c = e.target.closest("[data-coll]");
+  if (c) { $("#fc").value = c.dataset.coll; renderGrid(); $("#catalogo").scrollIntoView({ behavior: "smooth" }); return; }
+  const l = e.target.closest('a[href^="#"]');
+  if (l) { const t = document.getElementById(l.getAttribute("href").slice(1)); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: "smooth" }); $("#nav").classList.remove("open"); $("#menubtn").setAttribute("aria-expanded", "false"); } }
+});
+$("#pv").onclick = e => { if (e.target.id === "pv") closePiece(); };
+$("#cv").onclick = e => { if (e.target.id === "cv") closeCart(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closePiece(); closeCart(); } });
+$("#cartbtn").onclick = openCart;
+$("#menubtn").onclick = () => { const n = $("#nav"), o = n.classList.toggle("open"); $("#menubtn").setAttribute("aria-expanded", o); };
+["#q", "#fc", "#fs"].forEach(s => $(s).addEventListener("input", renderGrid));
+
+/* Carga del catálogo */
+fetch("productos.json").then(r => { if (!r.ok) throw 0; return r.json(); }).then(d => {
+  P = d; P.forEach(p => byId[p.id] = p);
+  loadCart(); refreshBadge(); renderCollections(); renderGrid(); renderRail();
+}).catch(() => { $("#count").textContent = "No pudimos cargar el catálogo. Actualizá la página para intentar de nuevo."; });
+</script>
+
+</body></html>
