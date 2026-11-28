@@ -1,2 +1,2 @@
 # tienda-xiomadesigns
-xioma swaign
+xioma designs
